@@ -29,7 +29,7 @@ function addMessage(client, message){
         h1.textContent = 'Tu:'
     }
     else{
-        h1.textContent = 'Asistente de Apoyo:'
+        h1.textContent = 'TourGuideBot:'
     }
 
     let p = document.createElement('p')

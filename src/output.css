@@ -624,14 +624,6 @@ video {
   height: 100vh;
 }
 
-.h-auto {
-  height: auto;
-}
-
-.min-h-3 {
-  min-height: 0.75rem;
-}
-
 .w-10 {
   width: 2.5rem;
 }
@@ -670,10 +662,6 @@ video {
 
 .cursor-pointer {
   cursor: pointer;
-}
-
-.resize-none {
-  resize: none;
 }
 
 .flex-col {
@@ -724,8 +712,8 @@ video {
   overflow-y: auto;
 }
 
-.overflow-y-hidden {
-  overflow-y: hidden;
+.text-nowrap {
+  text-wrap: nowrap;
 }
 
 .rounded-full {
