@@ -52,6 +52,8 @@ $btnSend.addEventListener('click', ()=>{
 
     if(message.length > 0 && message.length <= 300){
 
+        $inputSend.value = ''
+
         if($messages.textContent >= 1 && $messages.textContent <= 10){
 
             historial += `usuario: ${message}, `
@@ -74,7 +76,6 @@ $btnSend.addEventListener('click', ()=>{
             .then(data => {
                 $iaWriting.classList.add('hidden')
                 addMessage(false, data.res)
-                $inputSend.value = ''
                 historial += `respuesta ia: ${message}, `
                 $chat.scrollTop = $chat.scrollHeight;
             })

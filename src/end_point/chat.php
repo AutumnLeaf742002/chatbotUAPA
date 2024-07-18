@@ -1,11 +1,6 @@
 <?php
 
-include_once "cors.php";
 include_once "gemini.php";
-
-if(validateCorsIp() === false){
-    exit();
-}
 
 if(isset($_POST['message'])){
 
