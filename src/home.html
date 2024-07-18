@@ -9,18 +9,39 @@
     <title>TourGuideBot</title>
 </head>
 <body>
-    <main class="w-screen h-screen p-4 flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-center sm:gap-10" style="background-color: var(--blue_home);">
+    <main class="w-screen h-screen p-4 flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-center sm:gap-10 overflow-y-auto" style="background-color: var(--blue_home);">
         <div class="w-full sm:w-56 sm:h-56 flex justify-center">
             <img class="w-56 sm:w-56 sm:h-56" src="../public/gemini icon.png" alt="TourGuideBot icon">
         </div>
-        <div class="w-full sm:w-80 text-white flex flex-col gap-3 items-center">
-            <h1 class="font-bold text-3xl text-nowrap">
+        <div class="w-full sm:w-1/3 text-white flex flex-col gap-3 items-center">
+            <h1 class="font-bold text-2xl text-nowrap">
                 Bienvenido a TourGuideBot
             </h1>
 
-            <p class="text-md text-center">
-                Aqui podras charlar con nuestro asistente para ayudarte con tus inquietudes.
+            <p class="text-md text-justify">
+                Somos una empresa llamada TourGuide que ofrece viajes entre diferentes provincias, por el momento estamos ofreciendo viajes entre Santo Domingo y Santiago. Aquí podrás charlar con nuestro asistente para ayudarte con tus inquietudes. Nuestro enfoque se basa en ofrecer un asistente virtual que te ayuda con información para que puedas orientarte sobre nuestros servicios.
             </p>
+
+            <div class="w-full flex flex-col gap-0">
+                <p class="text-start w-full">
+                    Podras encontrar información sobre:
+                </p>
+    
+                <ul class="flex flex-col items-start list-disc w-full p-4">
+                    <li>
+                        Precios
+                    </li>
+                    <li>
+                        Terminales
+                    </li>
+                    <li>
+                        Choferes
+                    </li>
+                    <li>
+                        Destinos
+                    </li>
+                </ul>
+            </div>
 
             <button class="w-28 h-12 rounded-md mt-4" style="background-color: var(--red_pink);"onclick="init()">
                 Charlar
