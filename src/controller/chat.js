@@ -29,7 +29,7 @@ function addMessage(client, message){
         h1.textContent = 'Tu:'
     }
     else{
-        h1.textContent = 'TourGuideBot:'
+        h1.textContent = 'Travel Genius:'
     }
 
     let p = document.createElement('p')
@@ -46,17 +46,17 @@ function addMessage(client, message){
 // send message
 $btnSend.addEventListener('click', ()=>{
 
-    $iaWriting.classList.remove('hidden')
-
     const message = $inputSend.value
 
     if(message.length > 0 && message.length <= 300){
 
         $inputSend.value = ''
 
-        if($messages.textContent >= 1 && $messages.textContent <= 10){
+        if($messages.textContent >= 1 && $messages.textContent <= 20){
 
-            historial += `usuario: ${message}, `
+            $iaWriting.classList.remove('hidden')
+
+            historial += `usuario: ${message} / `
 
             addMessage(true, message)
             $chat.scrollTop = $chat.scrollHeight;
@@ -64,7 +64,7 @@ $btnSend.addEventListener('click', ()=>{
             $messages.textContent = $messages.textContent - 1
 
             const data = new FormData()
-            data.append('message', ` / conversacion previa: ${historial}/ nuevo mensaje: ${message}`)
+            data.append('message', ` / Historial de conversacion: ${historial}/ nuevo mensaje: ${message}`)
 
             const url = 'end_point/chat.php'
 
@@ -76,7 +76,7 @@ $btnSend.addEventListener('click', ()=>{
             .then(data => {
                 $iaWriting.classList.add('hidden')
                 addMessage(false, data.res)
-                historial += `respuesta ia: ${message}, `
+                historial += `Le respondiste al cliente: ${data.res} / `
                 $chat.scrollTop = $chat.scrollHeight;
             })
             .catch(error => {
@@ -84,7 +84,7 @@ $btnSend.addEventListener('click', ()=>{
             });
         }
         else{
-            alert('Has alcanzado el máximo de mensajes permitidos (10), por favor reinicie presionando el boton de arriba a la izquierda')
+            alert('Has alcanzado el máximo de mensajes permitidos (20), por favor reinicie presionando el boton de arriba a la izquierda')
             $inputSend.value = ''
             $iaWriting.classList.add('hidden')
             $chat.scrollTop = $chat.scrollHeight;
@@ -107,7 +107,7 @@ $inputSend.addEventListener('keypress', function(event) {
 
 // reset counter
 $resetCount.addEventListener('click', ()=>{
-    $messages.textContent = 10
+    $messages.textContent = 20
     historial = ''
     $chat.textContent = ''
     $inputSend.value = ''

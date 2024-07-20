@@ -30,6 +30,22 @@
     animation-delay: 0.6s;
 }
 
+.ul_ia{
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    margin: 2rem 0px 2rem 0px;
+    list-style: disc;
+    padding: 0px 1.5rem;
+}
+
+.backgroundChat{
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../public/backgroundChat.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 @keyframes writing {
     0% {
         transform: translateY(0rem);
